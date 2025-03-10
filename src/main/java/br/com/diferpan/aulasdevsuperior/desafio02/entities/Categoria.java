@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name="tb_categoria")
 @Getter
@@ -18,4 +21,7 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String descricao;
+
+    @OneToMany(mappedBy = "categoria")
+    private Set<Atividade> atividades = new HashSet<>();
 }
