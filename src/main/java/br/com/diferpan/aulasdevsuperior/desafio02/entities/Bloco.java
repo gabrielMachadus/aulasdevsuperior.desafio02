@@ -15,9 +15,7 @@ public class Bloco {
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant fim;
 
-    @ManyToOne
-    @JoinColumn(name = "atividade_id")
-    private Atividade atividade;
+
 
     @OneToMany(mappedBy = "bloco")
     private List<AtividadeBloco> atividadeBlocos = new ArrayList<>();
@@ -28,16 +26,14 @@ public class Bloco {
     public void setInicio(Instant inicio) { this.inicio = inicio; }
     public Instant getFim() { return fim; }
     public void setFim(Instant fim) { this.fim = fim; }
-    public Atividade getAtividade() { return atividade; }
-    public void setAtividade(Atividade atividade) { this.atividade = atividade; }
 
     public Bloco() {}
 
-    public Bloco(Long id, Instant inicio, Instant fim, Atividade atividade) {
+    public Bloco(Long id, Instant inicio, Instant fim) {
         this.id = id;
         this.inicio = inicio;
         this.fim = fim;
-        this.atividade = atividade;
+
     }
 
     @Override
