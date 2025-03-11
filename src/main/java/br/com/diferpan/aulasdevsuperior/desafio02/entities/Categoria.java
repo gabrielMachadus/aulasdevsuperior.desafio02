@@ -22,6 +22,6 @@ public class Categoria {
     private int id;
     private String descricao;
 
-    @OneToMany(mappedBy = "categoria")
+    @OneToMany(mappedBy = "categoria_id")
     private Set<Atividade> atividades = new HashSet<>();
 }

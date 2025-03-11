@@ -1,5 +1,6 @@
 package br.com.diferpan.aulasdevsuperior.desafio02.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +15,9 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AtividadeCategoriaPK {
+    @Column(name = "atividade_id")
     private Long atividade_id;
+    @Column(name = "categoria_id")
     private Long categoria_id;
 
     @Override
