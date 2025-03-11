@@ -21,6 +21,5 @@ INSERT INTO tb_participante_atividade (participante_id, atividade_id) VALUES (4,
 INSERT INTO tb_atividade_bloco (atividade_id, bloco_id) VALUES (1, 1);
 INSERT INTO tb_atividade_bloco (atividade_id, bloco_id) VALUES (2, 2);
 
-
-INSERT INTO tb_atividades_categorias (atividade_id, categoria_id) VALUES (1, 1);
-INSERT INTO tb_atividades_categorias (atividade_id, categoria_id) VALUES (2, 2);
+INSERT INTO tb_atividade_categoria (atividade_id, categoria_id) VALUES (1, 1);
+INSERT INTO tb_atividade_categoria (atividade_id, categoria_id) VALUES (2, 2);

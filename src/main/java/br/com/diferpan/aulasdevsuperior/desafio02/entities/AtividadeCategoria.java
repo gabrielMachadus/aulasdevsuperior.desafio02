@@ -1,28 +1,35 @@
 package br.com.diferpan.aulasdevsuperior.desafio02.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "tb_atividade_categoria")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class AtividadeCategoria {
     @EmbeddedId
     private AtividadeCategoriaPK id;
 
     @ManyToOne
-    @MapsId("atividade_id")
+    @MapsId("atividadeId")
     @JoinColumn(name = "atividade_id")
     private Atividade atividade;
 
     @ManyToOne
-    @MapsId("atividade_id")
+    @MapsId("categoriaId")
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
+
+    public AtividadeCategoriaPK getId() { return id; }
+    public void setId(AtividadeCategoriaPK id) { this.id = id; }
+    public Atividade getAtividade() { return atividade; }
+    public void setAtividade(Atividade atividade) { this.atividade = atividade; }
+    public Categoria getCategoria() { return categoria; }
+    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
+
+    public AtividadeCategoria() {}
+
+    public AtividadeCategoria(AtividadeCategoriaPK id, Atividade atividade, Categoria categoria) {
+        this.id = id;
+        this.atividade = atividade;
+        this.categoria = categoria;
+    }
 }

@@ -1,17 +1,9 @@
 package br.com.diferpan.aulasdevsuperior.desafio02.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "tb_atividade_bloco")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class AtividadeBloco {
     @EmbeddedId
     private AtividadeBlocoPk id;
@@ -25,4 +17,19 @@ public class AtividadeBloco {
     @MapsId("blocoId")
     @JoinColumn(name = "bloco_id")
     private Bloco bloco;
+
+    public AtividadeBlocoPk getId() { return id; }
+    public void setId(AtividadeBlocoPk id) { this.id = id; }
+    public Atividade getAtividade() { return atividade; }
+    public void setAtividade(Atividade atividade) { this.atividade = atividade; }
+    public Bloco getBloco() { return bloco; }
+    public void setBloco(Bloco bloco) { this.bloco = bloco; }
+
+    public AtividadeBloco() {}
+
+    public AtividadeBloco(AtividadeBlocoPk id, Atividade atividade, Bloco bloco) {
+        this.id = id;
+        this.atividade = atividade;
+        this.bloco = bloco;
+    }
 }
